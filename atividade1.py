@@ -1,4 +1,4 @@
-from biblioteca import Pessoa
+"""from biblioteca import Pessoa
 
 aluno01 = Pessoa(83, "paulo", 26)
 aluno02 = Pessoa(50, "ana clara", 19)
@@ -15,4 +15,20 @@ aluno03.comer("empada")
 aluno03.parardecomer()
 aluno03.comer("broa")
 aluno03.parardecomer()
-aluno03.parardecomer()
+aluno03.parardecomer()"""
+
+from biblioteca import ContaBancaria
+
+conta01 = ContaBancaria(1234, "Wesley", "Corrente")
+
+print (conta01.numero)
+conta01.ativar()
+conta01.depositar(1000)
+conta01.criarLimite(500)
+conta01.sacar(800)
+conta01.consulta()
+conta01.sacar(300)
+conta01.consulta()
+conta01.depositar(50)
+conta01.consulta()
+

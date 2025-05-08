@@ -59,6 +59,48 @@ class Pessoa():
         else:
             print("ele não está dormindo.")
 
+class ContaBancaria():
+    def __init__ (self, numero, nome, tipo):
+        self.numero = numero
+        self.n = nome
+        self.tipo = tipo
+        self.saldo = 0
+        self.status = False
+        self.limite = 0
+
+    def ativar(self):
+        if self.status == False:
+            print ("Conta ativada! ")
+            self.status = True
+        else:
+            print ("A conta já está ativada.")
+
+    def depositar(self, deposito):
+        if self.status == False:
+            print ("Necessário ativar a conta! ")
+        else:
+            print(f"valor depositado: {deposito}")
+            self.saldo += deposito
+
+
+    def sacar(self, saque):
+        if self.status == False:
+            print ("Necessário ativar a conta! ")
+        elif (self.saldo + self.limite) < saque:
+            print(f"Saque indisponível. Valor disponível: {self.saldo}")
+        else:
+            print (f"{self.n} sacou {saque} reais")
+            self.saldo -= saque
+
+    def consulta(self):
+        if self.status == False:
+            print ("Necessário ativar a conta! ")
+        else:
+            print (f"Seu saldo é {self.saldo}")
+
+    def criarLimite(self, novolimite):
+        self.limite += novolimite
+        print (f"Seu novo limite é {self.limite}")
 
 
 
