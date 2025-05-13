@@ -99,8 +99,100 @@ class ContaBancaria():
             print (f"Seu saldo é {self.saldo}")
 
     def criarLimite(self, novolimite):
-        self.limite += novolimite
-        print (f"Seu novo limite é {self.limite}")
+        if self.status == False:
+            print ("Necessário ativar a conta! ")
+        else:
+            self.limite += novolimite
+            print (f"Seu novo limite é {self.limite}")
+
+class Animal():
+    def __init__(self, nome, cor):
+        self.nome = nome
+        self.cor = cor
+
+    def comer(self):
+        print(f"O {self.nome} foi comer...")
+
+class Gato(Animal):
+    def __init__(self, nome, cor):
+        super().__init__(nome, cor)
+
+    def miar(self):
+        print (f"O {self.nome} foi miando")
+
+    def vomitarPelo(self):
+        print (f"O {self.nome} ta vomitando bola de pelo")
+
+class Vaca(Animal):
+    def __init__(self, nome, cor):
+        super().__init__(nome, cor)
+
+    def comer(self):
+        print(f"O {self.nome} foi comer capim")
+
+    def mugir(self):
+        print(f"A {self.nome} muge")
+
+class Coelhinho(Animal):
+    def __init__(self, nome, cor):
+        super().__init__(nome, cor)
+
+    def pular(self):
+        print (f"O {self.nome} pulou")
+
+class Cachorro(Animal):
+    def __init__(self, nome, cor):
+        super().__init__(nome, cor)
+
+    def latir(self):
+        print (f"O {self.nome} latiu")
+
+class Ingresso():
+    def __init__(self, valor):
+        self.valor = valor
+
+    def imprimeValor(self):
+        print (f"R${self.valor}")
+
+
+class ingressoVip(Ingresso):
+    def __init__(self, valor):
+        super().__init__(valor)
+        self.valor *= 1.5
+
+class Forma():
+    def __init__(self):
+        self.area = 0
+        self.perimetro = 0
+
+class Retangulo(Forma):
+    def __init__(self):
+        super().__init__()
+
+    def calculaArea(self, base, altura):
+        self.area = base * altura
+        print (f"A área é {self.area}")
+
+    def calculaPerimetro(self, base, altura):
+        self.perimetro = 2 * (base * altura)
+        print(f"O perímetro é {self.perimetro}")
+
+class Triangulo(Forma):
+    def __init__(self):
+        super().__init__()
+
+    def calculaArea(self, base, altura):
+        self.area = (base * altura) / 2
+        print(f"A área é {self.area}")
+
+    def calculaPerimetro(self, lado1, lado2, lado3):
+        self.area = lado1 + lado2 + lado3
+        print(f"O perímetro é {self.area}")
+
+
+
+
+
 
 
 
